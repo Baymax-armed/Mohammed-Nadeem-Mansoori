@@ -1,6 +1,0 @@
-{"ts":"2026-07-26T13:44:19.516Z","cmd":"viewport","args":"1440x900","origin":"about:blank","durationMs":5,"status":"ok","hasCookies":false,"mode":"launched"}
-{"ts":"2026-07-26T13:44:20.072Z","cmd":"goto","args":"http://localhost:8095/","origin":"http://localhost:8095/","durationMs":271,"status":"ok","hasCookies":false,"mode":"launched"}
-{"ts":"2026-07-26T13:44:20.640Z","cmd":"wait","args":"--networkidle","origin":"http://localhost:8095/","durationMs":286,"status":"ok","hasCookies":false,"mode":"launched"}
-{"ts":"2026-07-26T13:44:20.924Z","cmd":"js","args":"[typeof gsap, typeof ScrollTrigger, typeof Lenis].join(',')","origin":"http://localhost:8095/","durationMs":4,"status":"ok","hasCookies":false,"mode":"launched"}
-{"ts":"2026-07-26T13:44:21.234Z","cmd":"console","args":"--errors","origin":"http://localhost:8095/","durationMs":0,"status":"ok","hasCookies":false,"mode":"launched"}
-{"ts":"2026-07-26T13:44:22.246Z","cmd":"screenshot","args":"C:/Users/NMANSO~1/AppData/Local/Temp/claude/c--Users-nmansoori-Downloads-Phishing-Simulation-Tool/4fbb090e-f6f3-42fe-93b6-85836ae1ee37/scratchpad/anim-hero.png","origin":"http://localhost:8095/","durationMs":728,"status":"ok","hasCookies":false,"mode":"launched"}
