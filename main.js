@@ -72,5 +72,17 @@ if (!reduced && typeof gsap !== "undefined") {
   gsap.to(".hero-atmos .head", { yPercent: 24, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
   gsap.to(".hero-atmos .fog", { yPercent: -14, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
 
+  // Custom cursor (desktop, pointer devices only)
+  const cursor = document.getElementById("cursor");
+  if (cursor && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    const xTo = gsap.quickTo(cursor, "x", { duration: 0.28, ease: "power3" });
+    const yTo = gsap.quickTo(cursor, "y", { duration: 0.28, ease: "power3" });
+    window.addEventListener("pointermove", (e) => { xTo(e.clientX); yTo(e.clientY); }, { passive: true });
+    document.querySelectorAll("a, button, .wcard, .panel").forEach((el) => {
+      el.addEventListener("pointerenter", () => cursor.classList.add("ring"));
+      el.addEventListener("pointerleave", () => cursor.classList.remove("ring"));
+    });
+  }
+
   window.addEventListener("load", () => ScrollTrigger.refresh());
 }

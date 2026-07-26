@@ -98,9 +98,19 @@ section { position: relative; padding-block: clamp(80px, 12vw, 168px); }
 /* HERO */
 .hero { min-height: 100svh; display: grid; place-items: center; text-align: center; position: relative; overflow: hidden; padding-top: 90px; }
 .hero-atmos { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
-/* silhouette glow (approximates the 3D head/light) */
-.hero-atmos .head { position: absolute; top: 4%; left: 50%; transform: translateX(-50%); width: min(520px, 80vw); height: 62vh;
-  background: radial-gradient(50% 42% at 50% 38%, rgba(180,215,255,0.22), transparent 62%); filter: blur(6px); }
+/* original glowing orb: a soft light source, my own, not the template's asset */
+.hero-atmos .head { position: absolute; top: 8%; left: 50%; transform: translateX(-50%); width: min(360px, 62vw); aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(circle at 50% 44%, rgba(255,255,255,0.92), rgba(206,232,255,0.55) 20%, rgba(130,170,225,0.2) 44%, transparent 68%);
+  filter: blur(3px); animation: orbFloat 9s ease-in-out infinite; }
+.hero-atmos .head::after { content: ""; position: absolute; left: 50%; bottom: -46%; transform: translateX(-50%); width: 2px; height: 52%;
+  background: linear-gradient(rgba(206,232,255,0.4), transparent); filter: blur(1px); }
+@keyframes orbFloat { 0%, 100% { transform: translateX(-50%) translateY(0) scale(1); } 50% { transform: translateX(-50%) translateY(-16px) scale(1.035); } }
+@media (prefers-reduced-motion: reduce) { .hero-atmos .head { animation: none; } }
+
+/* custom cursor */
+.cursor { position: fixed; top: 0; left: 0; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); z-index: 90; pointer-events: none; mix-blend-mode: difference; transform: translate(-50%, -50%); transition: width 0.25s var(--ease), height 0.25s var(--ease), background 0.25s; }
+.cursor.ring { width: 40px; height: 40px; background: transparent; border: 1px solid var(--accent); }
+@media (hover: none), (pointer: coarse) { .cursor { display: none; } }
 /* horizontal fog band */
 .hero-atmos .fog { position: absolute; top: 34%; left: -10%; width: 120%; height: 42%;
   background: radial-gradient(60% 100% at 50% 50%, rgba(150,190,240,0.14), transparent 70%); filter: blur(40px); }
@@ -134,7 +144,9 @@ section { position: relative; padding-block: clamp(80px, 12vw, 168px); }
 .svc .visual { aspect-ratio: 4/3; border-radius: var(--r-lg); border: 1px solid var(--line); background:
   radial-gradient(90% 90% at 30% 20%, rgba(120,160,220,0.14), transparent 60%), linear-gradient(160deg, var(--surface), var(--bg-2));
   position: relative; overflow: hidden; display: grid; place-items: center; }
-.svc .visual .num { font-family: var(--serif); font-style: italic; font-size: clamp(4rem, 10vw, 8rem); color: rgba(255,255,255,0.07); }
+.svc .visual::before { content: ""; position: absolute; width: 62%; aspect-ratio: 1; border-radius: 50%; border: 1px solid rgba(255,255,255,0.08); box-shadow: inset 0 0 60px rgba(130,170,225,0.14), 0 0 80px rgba(130,170,225,0.06); }
+.svc .visual::after { content: ""; position: absolute; width: 34%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(206,232,255,0.16), transparent 70%); filter: blur(6px); }
+.svc .visual .num { position: relative; z-index: 1; font-family: var(--serif); font-style: italic; font-size: clamp(4rem, 10vw, 8rem); color: rgba(255,255,255,0.12); }
 .svc:nth-child(even) .visual { order: 2; }
 .svc .body .kicker { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
 .svc .body h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.9rem, 3.6vw, 2.8rem); letter-spacing: -0.01em; margin: 14px 0 14px; line-height: 1.05; }
