@@ -68,9 +68,10 @@ if (!reduced && typeof gsap !== "undefined") {
     onEnter: (b) => gsap.to(b, { opacity: 1, y: 0, duration: 0.8, ease: "expo.out", stagger: 0.1, overwrite: true }),
   });
 
-  // Hero atmosphere parallax
-  gsap.to(".hero-atmos .head", { yPercent: 24, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
-  gsap.to(".hero-atmos .fog", { yPercent: -14, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
+  // Hero atmosphere parallax (only the fog, which has no CSS transform of its own,
+  // so it never fights the float/spin keyframe animations on the orb + bloom).
+  gsap.to(".hero-atmos .fog", { yPercent: -16, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
+  gsap.fromTo(".hero-inner", { opacity: 1 }, { opacity: 0.15, y: -40, ease: "none", scrollTrigger: { trigger: ".hero", start: "40% top", end: "bottom top", scrub: true } });
 
   // Custom cursor (desktop, pointer devices only)
   const cursor = document.getElementById("cursor");

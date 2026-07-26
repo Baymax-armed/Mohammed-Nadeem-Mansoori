@@ -43,7 +43,41 @@
 
   <!-- HERO -->
   <header class="hero" id="top">
-    <div class="hero-atmos"><div class="head"></div><div class="fog"></div><div class="fog b"></div><div class="floor"></div></div>
+    <div class="hero-atmos">
+      <div class="head"></div>
+      <div class="bloom">
+        <svg viewBox="0 0 300 300" aria-hidden="true">
+          <defs>
+            <radialGradient id="pet" cx="50%" cy="72%" r="60%">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+              <stop offset="42%" stop-color="#cfe4ff" stop-opacity="0.5"/>
+              <stop offset="100%" stop-color="#7fa8dc" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="core" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="55%" stop-color="#dcecff" stop-opacity="0.8"/>
+              <stop offset="100%" stop-color="#9cc0ee" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <g style="mix-blend-mode:screen">
+            <ellipse cx="150" cy="78" rx="24" ry="72" fill="url(#pet)" transform="rotate(0 150 150)"/>
+            <ellipse cx="150" cy="78" rx="24" ry="72" fill="url(#pet)" transform="rotate(45 150 150)"/>
+            <ellipse cx="150" cy="78" rx="24" ry="72" fill="url(#pet)" transform="rotate(90 150 150)"/>
+            <ellipse cx="150" cy="78" rx="24" ry="72" fill="url(#pet)" transform="rotate(135 150 150)"/>
+            <ellipse cx="150" cy="78" rx="24" ry="72" fill="url(#pet)" transform="rotate(180 150 150)"/>
+            <ellipse cx="150" cy="78" rx="24" ry="72" fill="url(#pet)" transform="rotate(225 150 150)"/>
+            <ellipse cx="150" cy="78" rx="24" ry="72" fill="url(#pet)" transform="rotate(270 150 150)"/>
+            <ellipse cx="150" cy="78" rx="24" ry="72" fill="url(#pet)" transform="rotate(315 150 150)"/>
+            <ellipse cx="150" cy="88" rx="16" ry="58" fill="url(#pet)" transform="rotate(22 150 150)" opacity="0.7"/>
+            <ellipse cx="150" cy="88" rx="16" ry="58" fill="url(#pet)" transform="rotate(112 150 150)" opacity="0.7"/>
+            <ellipse cx="150" cy="88" rx="16" ry="58" fill="url(#pet)" transform="rotate(202 150 150)" opacity="0.7"/>
+            <ellipse cx="150" cy="88" rx="16" ry="58" fill="url(#pet)" transform="rotate(292 150 150)" opacity="0.7"/>
+          </g>
+          <circle cx="150" cy="150" r="34" fill="url(#core)"/>
+        </svg>
+      </div>
+      <div class="fog"></div><div class="fog b"></div><div class="floor"></div>
+    </div>
     <div class="hero-inner container">
       <span class="tagpill"><span class="dot"></span>Open to work · Mumbai, India</span>
       <h1><span class="im">I'm</span><span class="name"><span>Nadeem</span></span></h1>
