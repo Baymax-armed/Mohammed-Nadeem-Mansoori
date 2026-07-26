@@ -1,7 +1,8 @@
 # Mohammed Nadeem Mansoori
 
 Personal site and portfolio for **Mohammed Nadeem Mansoori**, Senior Application
-Security Engineer (AppSec, GRC, AI security). ISO/IEC 27001:2022 Lead Auditor and
+Security Engineer in Mumbai with 5+ years across application security, DevSecOps,
+GRC, and security operations. ISO/IEC 27001:2022 Lead Auditor, CEH v12, and CISM;
 creator of [VoltPhish](https://github.com/Baymax-armed/Voltphish).
 
 Live site: enable **GitHub Pages** on this repo (Settings > Pages > Source:
