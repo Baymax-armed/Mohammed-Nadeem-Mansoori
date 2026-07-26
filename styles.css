@@ -355,6 +355,16 @@ footer .flinks a:hover { color: var(--accent); }
 .job ul li::before { content: ""; position: absolute; left: 0; top: 10px; width: 7px; height: 1px; background: var(--accent-line); }
 .job ul li b { color: var(--text); font-weight: 600; }
 
+/* ---- writing ---- */
+.writing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.post { display: flex; flex-direction: column; }
+.post .date { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dim); }
+.post h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.24rem; letter-spacing: -0.01em; margin: 12px 0 10px; text-wrap: balance; }
+.post p { color: var(--muted); font-size: 0.95rem; }
+.post .read { margin-top: auto; padding-top: 20px; }
+.post .read a { font-family: var(--font-mono); font-size: 0.82rem; color: var(--text); display: inline-flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--line); padding-bottom: 3px; transition: color 0.2s, border-color 0.2s; }
+.post .read a:hover { color: var(--accent); border-color: var(--accent-line); }
+
 /* ---- education ---- */
 .edu { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 20px; border: 1px solid var(--line-soft); border-radius: var(--r-md); padding: 22px 26px; margin-top: 26px; background: linear-gradient(180deg, var(--surface), transparent); }
 .edu .deg { font-family: var(--font-display); font-weight: 600; font-size: 1.12rem; letter-spacing: -0.01em; }
@@ -386,6 +396,7 @@ footer .flinks a:hover { color: var(--accent); }
   .cap-grid { grid-template-columns: 1fr; }
   .tool-cols { grid-template-columns: repeat(2, 1fr); }
   .cert-wrap { grid-template-columns: 1fr; }
+  .writing-grid { grid-template-columns: 1fr; }
   .contact-card { grid-template-columns: 1fr; }
   .contact-actions { min-width: 0; }
   .stat-strip { grid-template-columns: repeat(2, 1fr); }

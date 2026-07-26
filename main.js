@@ -1,10 +1,7 @@
 /* Mohammed Nadeem Mansoori - portfolio interactions.
    Small, dependency-free, and reduced-motion aware. */
 
-// --- Edit these if they change ---------------------------------------------
 const EMAIL = "nadeemmansoori05@gmail.com";
-const LINKEDIN_URL = ""; // paste your LinkedIn profile URL here to show the button
-// ---------------------------------------------------------------------------
 
 // Footer year
 const yearEl = document.getElementById("year");
@@ -48,13 +45,5 @@ if (copyBtn) {
       if (copyNote) copyNote.textContent = EMAIL;
     }
     window.setTimeout(() => copyNote && (copyNote.textContent = ""), 3200);
-  });
-}
-
-// LinkedIn button, only if a URL is set
-if (LINKEDIN_URL) {
-  document.querySelectorAll(".linkedin-btn").forEach((a) => {
-    a.href = LINKEDIN_URL;
-    a.hidden = false;
   });
 }
